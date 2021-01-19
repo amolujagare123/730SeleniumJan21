@@ -18,8 +18,9 @@ public class OpenClinicDemo {
         // open a url
         driver.get("http://openclinic.sourceforge.net/openclinic/admin/staff_list.php");
         
+        String name = "Hayan";
 
-        driver.findElement(By.xpath("//tr[td[text()='Galaxy']]//img[@alt='edit']")).click();
+        driver.findElement(By.xpath("//tr[td[text()='"+name+"']]//img[@alt='edit']")).click();
 
     }
 
