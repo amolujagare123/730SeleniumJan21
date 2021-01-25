@@ -1,3 +1,5 @@
+package SeleniumBasics;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FindElementDemo {
+public class xpathDemo1 {
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -19,16 +21,24 @@ public class FindElementDemo {
         driver.manage().window().maximize();
 
         // open a url
-        driver.get("http://stock.scriptinglogic.net/");
+       driver.get("http://stock.scriptinglogic.net/");
 
-       WebElement txtUser = driver.findElement(By.id("login-username"));
+       WebElement txtUser = driver.findElement(By.xpath("//input[@id='login-username']"));
        txtUser.sendKeys("admin");
 
-       WebElement txtPassword = driver.findElement(By.id("login-password"));
+       WebElement txtPassword = driver.findElement(By.xpath("//input[@type='password']"));
        txtPassword.sendKeys("admin");
 
-       WebElement btnLogin = driver.findElement(By.name("submit"));
+       WebElement btnLogin = driver.findElement(By.xpath("//input[@value='LOG IN']"));
        btnLogin.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+        WebElement lnkAddCustomer = driver.findElement(By.xpath("//a[text()='Add Customer']"));
+        lnkAddCustomer.click();
+
+/*
 
        //Thread.sleep(10000);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -53,6 +63,7 @@ public class FindElementDemo {
 
         WebElement btnSubmit = driver.findElement(By.name("Submit"));
         btnSubmit.click();
+*/
 
 
 

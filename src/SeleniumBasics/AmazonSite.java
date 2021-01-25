@@ -1,9 +1,11 @@
+package SeleniumBasics;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class OpenClinicDemo {
+public class AmazonSite {
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -16,11 +18,10 @@ public class OpenClinicDemo {
         driver.manage().window().maximize();
 
         // open a url
-        driver.get("http://openclinic.sourceforge.net/openclinic/admin/staff_list.php");
-        
-        String name = "Hayan";
+        driver.get("https://www.amazon.in/s?k=amarendra+chitale&ref=nb_sb_noss_1");
 
-        driver.findElement(By.xpath("//tr[td[text()='"+name+"']]//img[@alt='edit']")).click();
+      //  driver.findElement(By.xpath("//img[@alt='NLP Life Transforming Neuro Magical Stories']")).click();
+        driver.findElement(By.xpath("//img[contains(@alt,'NLP')]")).click();
 
     }
 
