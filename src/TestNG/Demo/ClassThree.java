@@ -25,15 +25,17 @@ public class ClassThree {
         System.out.println("classThreeTest1");
     }
 
-    @Test
+    @Test (groups = "email")
     public void classThreeTest2()
     {
         System.out.println("classThreeTest2");
     }
-
+    @Parameters({"myUrl","envName"})
     @Test
-    public void classThreeTest3()
+    public void classThreeTest3(String p1,String p2)
     {
+        System.out.println("Url="+p1);
+        System.out.println("Enviornment name="+p2);
         System.out.println("classThreeTest3");
     }
 }

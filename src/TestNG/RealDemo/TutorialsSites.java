@@ -1,15 +1,14 @@
-package TestNG;
+package TestNG.RealDemo;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SocialSites {
+public class TutorialsSites {
     WebDriver driver;
 
     @BeforeClass
@@ -31,27 +30,30 @@ public class SocialSites {
 
 
     @Test (priority = 3)
-    public void facebook()
+    public void scriptinglogic()
     {
         // open a url
-        driver.get("http://facebook.com/");
+        driver.get("http://scriptinglogic.com/");
 
     }
 
 
-    @Test (priority = 1,enabled = false)
-    public void twitter()
+    @Test (priority = 1)
+    public void tutorialspoint()
     {
+
+
+        Assert.assertEquals(true,false,"test is getting failed");
         // open a url
-        driver.get("http://twitter.com/");
+        driver.get("http://tutorialspoint.com/");
 
     }
 
     @Test (priority = 2)
-    public void instagram()
+    public void javatpoint()
     {
         // open a url
-        driver.get("http://instagram.com/");
+        driver.get("http://javatpoint.com/");
 
     }
 

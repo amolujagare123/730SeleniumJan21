@@ -2,6 +2,7 @@ package TestNG.Demo;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ClassOne {
@@ -29,15 +30,19 @@ public class ClassOne {
         System.out.println("classOneTest1");
     }
 
-    @Test
+    @Test (groups = "email")
     public void classOneTest2()
     {
         System.out.println("classOneTest2");
     }
 
+
+    @Parameters({"myUrl","envName"})
     @Test
-    public void classOneTest3()
+    public void classOneTest3(String p1,String p2)
     {
+        System.out.println("Url="+p1);
+        System.out.println("Enviornment name="+p2);
         System.out.println("classOneTest3");
     }
 }
